@@ -13,7 +13,6 @@ export default function FieldCardHolder(){
         }
     }
   
-    
     function handlePaymentButtonClick(paymentMethod) {
         var addedAmount = parseFloat(document.querySelector('.money-input-contenteditable').innerText.replace(/\D/g, ''));
         var existingAmount = parseFloat(localStorage.getItem('savedAmount')) || 0;
@@ -26,9 +25,9 @@ export default function FieldCardHolder(){
         console.log(name);
         console.log(comment);
     
-    
-       
         document.querySelector('.money-input-contenteditable').innerText = '0';
+
+        setCurrentAmount(0);
         document.getElementById('name').value = '';
         document.getElementById('comment').value = '';
     }
@@ -53,8 +52,6 @@ export default function FieldCardHolder(){
                         </div>
                     </div>
                     </div>
-                    
-                
                     <div className="flex justify-between max-w-[346px] mx-auto w-full my-4">
                         <div tabIndex="0" className="chip-button bg-white border-[1px] border-drawer rounded-[16px] px-3 flex items-center justify-center cursor-pointer select-none min-h-[40px] w-[115px] mr-2  hover:bg-hover" onClick={increaseAmount(100)}>
                             <div className="font-[500] text-[18px]">+100&nbsp;₴</div>
